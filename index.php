@@ -6,6 +6,7 @@
 	<script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
 </head>
 <body>
-	
+	<div id="mapid">
+	</div>
 </body>
 </html>
