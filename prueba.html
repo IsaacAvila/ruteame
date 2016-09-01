@@ -17,11 +17,16 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaXNhYWNhdmlsYSIsImEiOiJjaXNoejAwMXowMDBvMnBud
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
+<<<<<<< HEAD
     zoom: 13,
+=======
+    zoom: 12.5,
+>>>>>>> afac6c79798067ed887fdb4896f24f74f636717c
     center: [-103.7271400, 19.2499700]
 })
 
 map.on('load', function () {
+<<<<<<< HEAD
     
     var route = "route";
 
@@ -85,18 +90,63 @@ map.on('load', function () {
         "paint": {
             "line-color": "#888",
             "line-width": 5
+=======
+    map.addSource('museums', {
+        type: 'vector',
+        url: 'mapbox://mapbox.2opop9hr'
+    });
+    map.addLayer({
+        'id': 'museums',
+        'type': 'circle',
+        'source': 'museums',
+        'layout': {
+            'visibility': 'visible'
+        },
+        'paint': {
+            'circle-radius': 8,
+            'circle-color': 'rgba(55,148,179,1)'
+        },
+        'source-layer': 'museum-cusco'
+    });
+
+    map.addSource('contours', {
+        type: 'vector',
+        url: 'mapbox://mapbox.mapbox-terrain-v2'
+    });
+    map.addLayer({
+        'id': 'contours',
+        'type': 'line',
+        'source': 'contours',
+        'source-layer': 'contour',
+        'layout': {
+            'visibility': 'visible',
+            'line-join': 'round',
+            'line-cap': 'round'
+        },
+        'paint': {
+            'line-color': '#877b59',
+            'line-width': 1
+>>>>>>> afac6c79798067ed887fdb4896f24f74f636717c
         }
     });
 });
 
+<<<<<<< HEAD
 var toggleableLayerIds = [ 'RUTA-Y', 'RUTA-X' ];
+=======
+var toggleableLayerIds = [ 'contours', 'museums' ];
+>>>>>>> afac6c79798067ed887fdb4896f24f74f636717c
 
 for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];
 
     var link = document.createElement('a');
     link.href = '#';
+<<<<<<< HEAD
     link.className = '';
+=======
+    link.className = 'active';
+>>>>>>> afac6c79798067ed887fdb4896f24f74f636717c
     link.textContent = id;
 
     link.onclick = function (e) {
